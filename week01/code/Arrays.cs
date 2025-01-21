@@ -61,3 +61,65 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
     }
+
+
+// W01 Code: Dynamic Arrays 
+
+public static class ArraysAssignment
+{
+    /// <summary>
+    /// Generates an array containing a sequence of multiples of a given number.
+    /// The sequence starts with the given number and continues for the specified count.
+    /// For example, MultiplesOf(3, 5) returns {3, 6, 9, 12, 15}.
+    /// </summary>
+
+    // TODO Problem 1 Start
+    public static double[] MultiplesOf(double number, int length)
+    {
+        // Step 1: We need to create an array with the size length
+        double[] result = new double[length];
+
+        // Step 2: We create a loop to calculate and keep the multiples
+        for (int i = 0; i < length; i++)  
+        {
+            result[i] = number * (i + 1);
+        }
+
+        // Step 3: Return the array
+        return result;
+    }
+}
+
+public static class ListProblem
+{
+    /// <summary>
+    /// Rotate the 'data' to the right by the specified 'amount'. For example, if the data is
+    /// List<int>{1, 2, 3, 4, 5, 6, 7, 8, 9} and the amount is 5, the list after the function runs should be
+    /// List<int>{5, 6, 7, 8, 9, 1, 2, 3, 4}. If the data is List<int>{1, 2, 3, 4, 5, 6, 7, 8, 9} and the amount is 3, 
+    /// the list after the function runs should be List<int>{7, 8, 9, 1, 2, 3, 4, 5, 6}. The value of 'amount' will be
+    /// in the range of 1 to data.Count, inclusive.
+    ///
+    /// This function modifies the existing 'data' list rather than returning a new list.
+    /// </summary>
+    public static void RotateListRight(List<int> data, int amount)
+    {
+        // Step 1: Verify that the list isn't empty and the amount is valid
+        if (data.Count == 0 || amount <= 0)
+        {
+            return;
+        }
+
+        // Step 2: Reduce the amount if it's larger than the list size
+        amount %= data.Count;
+        if (amount == 0) return;
+
+        // Step 3: Split the list into two parts
+        List<int> part1 = data.GetRange(data.Count - amount, amount);
+        List<int> part2 = data.GetRange(0, data.Count - amount);
+
+        // Step 4: Clear the list and combine the parts in the correct order
+        data.Clear();
+        data.AddRange(part1);
+        data.AddRange(part2);
+    }
+}

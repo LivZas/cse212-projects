@@ -4,6 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // DO NOT MODIFY THE CODE IN THE TESTS in this file, just the comments above the tests. 
 // Fix the code being tested to match requirements and make all tests pass. 
 
+// Summary of the errors and test results
+// Error 1: TestTakingTurnsQueue_Forever Negative: The person with negative turns didn't stay in the queue.
+// Error 2: TestTakingTurnsQueue_FiniteRepetition: The queue couldn't manage limited turns correctly.
+// Error 3: TestTakingTurnsQueue_AddPlayerMidway: Couldn't add more people to the game.
+// Error 4: TestTakingTurnsQueue_ForeverZero: The person with zero or negative turns wasn't processed correctly.
+// Error 5: TestTakingTurnsQueue_Empty: No error was thrown when trying to get someone from an empty queue.
+
 [TestClass]
 public class TakingTurnsQueueTests
 {

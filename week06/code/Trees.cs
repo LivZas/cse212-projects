@@ -51,7 +51,7 @@ public static class Trees
         // TODO Start Problem 5
     if (first > last)
         {
-            return;
+            return; 
         }
 
         int middle = (first + last) / 2;
